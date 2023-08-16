@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Button Form</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <form id="myForm">
+        <H1>Do You Have NID Card</H1>
+        <label> Yes
+            <input type="radio" name="option" value="option1"> 
+        </label>
+        <label>
+            No
+            <input type="radio" name="option" value="option2"> 
+        </label>
+        <input type="text" id="textInput" placeholder="Enter NID Card Number">
+    </form>
+
+    <script>
+        $(document).ready(function() {
+    // Hide the input box initially
+    $('#textInput').hide();
+
+    // Listen for radio button changes
+    $('input[type="radio"]').change(function() {
+        var selectedOption = $('input[name="option"]:checked').val();
+        
+        // Show or hide input box based on selected option
+        if (selectedOption === 'option1') {
+            $('#textInput').show();
+        } else {
+            $('#textInput').hide();
+        }
+    });
+});
+
+    </script>
+</body>
+</html>
